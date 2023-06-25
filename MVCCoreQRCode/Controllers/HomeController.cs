@@ -30,10 +30,7 @@ namespace MVCCoreQRCode.Controllers
             Bitmap qrbitmap = QRCode.GetGraphic(60);
             byte[] bitmapArray=qrbitmap.BitmapToByteArray();
             string Url = string.Format("data:image/png;base64,{0}", Convert.ToBase64String(bitmapArray));
-
             qRCode.returnQRURL = Url;
-
-
             return View(qRCode);
         }
 
